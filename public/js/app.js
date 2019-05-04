@@ -51937,7 +51937,8 @@ var routes = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: routes
 });
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a(vue__WEBPACK_IMPORTED_MODULE_0___default.a.util.extend({
-  router: router
+  router: router,
+  store: store
 }, _components_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"])).$mount('#app');
 
 /***/ }),
