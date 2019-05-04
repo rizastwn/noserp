@@ -53,3 +53,7 @@ Route::get('/datamatauang', 'PagesController@datamatauang');
 Route::get('/datapelanggan', 'PagesController@datapelanggan');
 Route::get('/datasatuan', 'PagesController@datasatuan');
 Route::get('/datasupplier', 'PagesController@datasupplier');
+
+//Route me(samsul)
+Route::resource('/karyawan', 'KaryawanController');
+Route::get('/{any}', 'KaryawanController@index')->where('any', '.*');

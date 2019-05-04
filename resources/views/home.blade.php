@@ -114,6 +114,8 @@
                     </li>
                   </ul>
                 </li>
+
+                <li><a href="{{ route('karyawan.index')}}"><i class="fa fa-user"></i>Karyawan</a></li>
               </ul>
             </div>
           </div>
@@ -202,6 +204,7 @@
 
   <!-- Custom Theme Scripts -->
   <script src="{{ url('js/custom.min.js') }}"></script>
+  <script src="{{ asset('js/app.js')}}"></script>
 
 </body>
 
