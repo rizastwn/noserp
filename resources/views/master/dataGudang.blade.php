@@ -27,21 +27,14 @@
         </div>
             <div class="card">
               <div class="card-header">
-                  <a href="" class="btn btn-success ">Tambah Data Gudang</a>
+                
                 <div class="card-tools">
                   <div class="" >
-                    <input type="text" class="form-control float-right"  placeholder="Filter">
                     <button class="btn btn-success" >
-                        <i class="fas fa-plus-square">&nbsp;&nbsp;Tambah gudang</i>
+                        <i class="fa fa-plus-square"> Tambah gudang</i>
                     </button>
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" v-model="filter" class="form-control float-right"  placeholder="Filter">
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
+                    <input type="text" class="form-control float-right"  placeholder="Filter">
+                    <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">

@@ -74,13 +74,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-<<<<<<< HEAD
                   
               </div> 
-=======
-                  <pagination :data="klasifikasi" @pagination-change-page="getResults"></pagination>
-              </div>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
             </div>
             <!-- /.card -->
 
@@ -94,7 +89,7 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form @submit.prevent="readData()"> <!-- prevent will prevent page refresh -->
+                <form > <!-- prevent will prevent page refresh -->
                     <div class="modal-body">
                         <div class="form-group-row">
                             <div class="form-group">
