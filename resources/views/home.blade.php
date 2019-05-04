@@ -23,6 +23,7 @@
 
   <!-- Custom Theme Style -->
   <link href="{{ url('css/custom.min.css') }}" rel="stylesheet">
+
 </head>
 
 <body class="nav-md">
@@ -204,7 +205,7 @@
 
   <!-- Custom Theme Scripts -->
   <script src="{{ url('js/custom.min.js') }}"></script>
-  <script src="{{ asset('js/app.js')}}"></script>
+  <script src="{{ mix('js/app.js')}}"></script>
 
 </body>
 
