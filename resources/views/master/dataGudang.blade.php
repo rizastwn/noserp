@@ -27,6 +27,10 @@
         </div>
             <div class="card">
               <div class="card-header">
+                  <a href="" class="btn btn-success ">Tambah Data Gudang</a>
+                <div class="card-tools">
+                  <div class="" >
+                    <input type="text" class="form-control float-right"  placeholder="Filter">
                     <button class="btn btn-success" >
                         <i class="fas fa-plus-square">&nbsp;&nbsp;Tambah gudang</i>
                     </button>
@@ -49,22 +53,26 @@
                     <th>Tipe</th>
                   </tr>
 
+                  <tr >
                   <tr v-for='gudang in gudang.data' :key='gudang.KodeLokasi'>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>
                         <a href="#" >
+                            <i class="fa fa-eye green"></i>
                             <i class="fas fa-eye green"></i>
                             Lihat
                         </a>    
                         &nbsp; - &nbsp;
                         <a href="#" >
+                            <i class="fa fa-edit blue"></i>
                             <i class="fas fa-edit blue"></i>
                             Ubah
                         </a>    
                         &nbsp; - &nbsp;
                         <a href="#" >
+                            <i class="fa fa-trash red"></i>
                             <i class="fas fa-trash red"></i>
                             Hapus
                         </a>

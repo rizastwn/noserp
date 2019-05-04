@@ -34,7 +34,11 @@ class DataSatuanController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
+        return view('buatForm.buatDataSatuan');
+=======
         //
+>>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
     }
 
     /**
@@ -56,7 +60,11 @@ class DataSatuanController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
+        return view('editForm.editDataSatuan');
+=======
         //
+>>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
     }
 
     /**

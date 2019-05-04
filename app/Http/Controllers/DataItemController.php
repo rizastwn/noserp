@@ -23,7 +23,7 @@ class DataItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('buatForm.buatDataItem');
     }
 
     /**
@@ -34,7 +34,7 @@ class DataItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('editForm.buatDataItem');
     }
 
     /**
