@@ -23,11 +23,7 @@ class DataPelangganController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
         return view('buatForm.buatDataPelanggan');
-=======
-        //
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
     }
 
     /**
@@ -38,11 +34,7 @@ class DataPelangganController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
         return view('editForm.editDataPelanggan');
-=======
-        //
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
     }
 
     /**

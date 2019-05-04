@@ -23,11 +23,7 @@ class DataKlasifikasiController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
         return view('buatForm.buatDataKlasifikasi');
-=======
-        //
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
     }
 
     /**
@@ -60,11 +56,7 @@ class DataKlasifikasiController extends Controller
      */
     public function edit($id)
     {
-<<<<<<< HEAD
         return view('editForm.editDataKlasifikasi');
-=======
-        //
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
     }
 
     /**

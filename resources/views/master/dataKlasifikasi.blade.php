@@ -27,7 +27,6 @@
         </div> 
             <div class="card">
               <div class="card-header">
-<<<<<<< HEAD
                     <button  class="btn btn-success">
                         <i  class="fa fa-plus-square"> Tambah klasifikasi</i>
                     </button>
@@ -36,16 +35,6 @@
                     <input type="text"  class="form-control float-right"  placeholder="Filter">
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
-=======
-                    <button class="btn btn-success" @click="createModal">
-                        <i class="fas fa-plus-square">&nbsp;&nbsp;Tambah klasifikasi</i>
-                    </button>
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" v-model="filter" class="form-control float-right" @keydown="filterResult" placeholder="Filter">
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default" @click="filterResult"><i class="fa fa-search"></i></button>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                     </div>
                   </div>
                 </div>
@@ -55,7 +44,6 @@
                 <table class="table table-hover">
                   <tbody>
                   <tr>
-<<<<<<< HEAD
                     <th >Kode Klasifikasi</th>
                     <th >Nama Klasifikasi</th>
                     <th >Kode Item</th>
@@ -78,30 +66,6 @@
                         &nbsp; - &nbsp;
                         <a href="#" >
                             <i class="fa fa-trash red"></i>
-=======
-                    <th @click="sortBy('KodeKategori')">Kode Klasifikasi</th>
-                    <th @click="sortBy('NamaKategori')">Nama Klasifikasi</th>
-                    <th @click="sortBy('KodeItem')">Kode Item</th>
-                  </tr>
-
-                  <tr v-for='klasifikasi in klasifikasi.data' :key='klasifikasi.KodeKategori'>
-                    <td>{{klasifikasi.KodeKategori}}</td>
-                    <td>{{klasifikasi.NamaKategori}}</td>
-                    <td>{{klasifikasi.KodeItem}}</td>
-                    <td>
-                        <a href="#" @click="readModal(klasifikasi)">
-                            <i class="fas fa-eye green"></i>
-                            Lihat
-                        </a>    
-                        &nbsp; - &nbsp;
-                        <a href="#" @click="updateModal(klasifikasi)">
-                            <i class="fas fa-edit blue"></i>
-                            Ubah
-                        </a>    
-                        &nbsp; - &nbsp;
-                        <a href="#" @click="deleteData(klasifikasi.KodeKategori)">
-                            <i class="fas fa-trash red"></i>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                             Hapus
                         </a>
                     </td>

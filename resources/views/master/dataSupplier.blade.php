@@ -28,19 +28,11 @@
             <div class="card">
               <div class="card-header">
                     <button class="btn btn-success" >
-<<<<<<< HEAD
                         <i class="fa fa-plus-square">&nbsp;&nbsp;Tambah supplier</i>
                     </button>
                 <div class="card-tools">
                   <div >
                     <input type="text" class="form-control float-right"  placeholder="Filter">
-=======
-                        <i class="fas fa-plus-square">&nbsp;&nbsp;Tambah supplier</i>
-                    </button>
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" v-model="filter" class="form-control float-right"  placeholder="Filter">
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
                     </div>
@@ -67,29 +59,17 @@
                     <td></td>
                     <td>
                         <a href="#" >
-<<<<<<< HEAD
                             <i class="fa fa-eye green"></i>
-=======
-                            <i class="fas fa-eye green"></i>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                             Lihat
                         </a>    
                         &nbsp; - &nbsp;
                         <a href="#" >
-<<<<<<< HEAD
                             <i class="fa fa-edit blue"></i>
-=======
-                            <i class="fas fa-edit blue"></i>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                             Ubah
                         </a>    
                         &nbsp; - &nbsp;
                         <a href="#" >
-<<<<<<< HEAD
                             <i class="fa fa-trash red"></i>
-=======
-                            <i class="fas fa-trash red"></i>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                             Hapus
                         </a>
                     </td>
@@ -146,64 +126,7 @@
             </div>
             </div>
 
-<<<<<<< HEAD
             
-=======
-            <!-- Create & Update Modal -->
-            <div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-labelledby="createDataTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 v-show="!modal_change" class="modal-title">Tambah Supplier</h5>
-                    <h5 v-show="modal_change" class="modal-title">Ubah Supplier</h5>
-                    <button class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form > <!-- prevent will prevent page refresh -->
-                    <div class="modal-body">
-                        <div class="form-group-row">
-                            <div class="form-group">
-                                <label v-show="modal_change">Kode Supplier: </label>
-                                <input v-model="form.KodeSupplier" type="text" name="KodeSupplier" placeholder="Kode Supplier" 
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('KodeSupplier') }">
-                                <has-error :form="form" field="KodeSupplier"></has-error>
-                            </div>
-                            <div class="form-group">
-                                <label v-show="modal_change">Nama Supplier: </label>
-                                <input v-model="form.NamaSupplier" type="text" name="NamaSupplier" placeholder="Nama Supplier" 
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('NamaSupplier') }">
-                                <has-error :form="form" field="NamaSupplier"></has-error>
-                            </div>
-                            <div class="form-group">
-                                <label v-show="modal_change">Alamat: </label>
-                                <input v-model="form.Alamat" type="text" name="Alamat" placeholder="Alamat" 
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('Alamat') }">
-                                <has-error :form="form" field="Alamat"></has-error>
-                            </div>
-                            <div class="form-group">
-                                <label v-show="modal_change">Telepon: </label>
-                                <input v-model="form.Telepon" type="text" name="Telepon" placeholder="Telepon" 
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('Telepon') }">
-                                <has-error :form="form" field="Telepon"></has-error>
-                            </div>
-                            <div class="form-group">
-                                <label v-show="modal_change">Handphone: </label>
-                                <input v-model="form.Handphone" type="text" name="Handphone" placeholder="Handphone" 
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('Handphone') }">
-                                <has-error :form="form" field="Handphone"></has-error>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button v-show="!modal_change" type="submit" class="btn btn-primary">Save</button>
-                        <button v-show="modal_change" type="submit" class="btn btn-primary">Edit</button>
-                    </div>
-                </form>
-                </div>
-            </div>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
         </div>
     </div>
 @endsection

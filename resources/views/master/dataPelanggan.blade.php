@@ -28,19 +28,11 @@
             <div class="card">
               <div class="card-header">
                     <button class="btn btn-success" >
-<<<<<<< HEAD
                         <i class="fa fa-plus-square"> Tambah pelanggan</i>
                     </button>
                 <div class="card-tools">
                   <div >
                     <input type="text" class="form-control float-right"  placeholder="Filter">
-=======
-                        <i class="fas fa-plus-square">&nbsp;&nbsp;Tambah pelanggan</i>
-                    </button>
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" v-model="filter" class="form-control float-right"  placeholder="Filter">
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
                     </div>
@@ -59,11 +51,7 @@
                     <th>Email</th>
                   </tr>
 
-<<<<<<< HEAD
                   <tr >
-=======
-                  <tr v-for='pelanggan in pelanggan.data' :key='pelanggan.KodePelanggan'>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                     <td></td>
                     <td></td>
                     <td></td>
@@ -72,29 +60,17 @@
                     <td>
                         <a href="#" >
                        
-<<<<<<< HEAD
                             <i class="fa fa-eye green"></i>
-=======
-                            <i class="fas fa-eye green"></i>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                             Lihat
                         </a>    
                         &nbsp; - &nbsp;
                         <a href="#"">
-<<<<<<< HEAD
                             <i class="fa fa-edit blue"></i>
-=======
-                            <i class="fas fa-edit blue"></i>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                             Ubah
                         </a>    
                         &nbsp; - &nbsp;
                         <a href="#" >
-<<<<<<< HEAD
                             <i class="fa fa-trash red"></i>
-=======
-                            <i class="fas fa-trash red"></i>
->>>>>>> 2261e1be3a9bce2015a1ba32c2d0aa56b0ae2206
                             Hapus
                         </a>
                     </td>
