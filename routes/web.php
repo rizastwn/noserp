@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\DataKlasifikasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,10 +47,24 @@ Route::get('/penjualanLangsung', 'PagesController@penjualanLangsung');
 Route::get('/returnPenjualanLangsung', 'PagesController@returnPenjualanLangsung');
 
 //route master
-Route::get('/datagudang', 'PagesController@datagudang');
-Route::get('/dataitem', 'PagesController@dataitem');
-Route::get('/dataklasifikasi', 'PagesController@dataklasifikasi');
-Route::get('/datamatauang', 'PagesController@datamatauang');
-Route::get('/datapelanggan', 'PagesController@datapelanggan');
-Route::get('/datasatuan', 'PagesController@datasatuan');
-Route::get('/datasupplier', 'PagesController@datasupplier');
+//Route::get('/datagudang', 'PagesController@datagudang');
+//Route::get('/dataitem', 'PagesController@dataitem');
+//Route::get('/dataklasifikasi', 'PagesController@dataklasifikasi');
+//Route::get('/datamatauang', 'PagesController@datamatauang');
+//Route::get('/datapelanggan', 'PagesController@datapelanggan');
+//Route::get('/datasatuan', 'PagesController@datasatuan');
+//Route::get('/datasupplier', 'PagesController@datasupplier');
+
+
+// route buat semua controller
+Route::resource('lokasi', 'DataGudangController');
+Route::resource('item', 'DataItemController');
+//Route::get('/kategori','DataKlasifikasiController@index');
+Route::resource('kategori', 'DataKlasifikasiController');
+Route::resource('matauang', 'DataMataUangController');
+Route::resource('pelanggan', 'DataPelangganController');
+Route::resource('satuan', 'DataSatuanController');
+Route::resource('supplier', 'DataSupplierController');
+Route::resource('PemesananPembelian', 'PemesananPembelianController');
+Route::resource('PemesananPenjualan', 'PemesananPenjualanController');
+

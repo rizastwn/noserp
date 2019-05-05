@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\lokasi;
 class DataGudangController extends Controller
 {
     /**

@@ -70,12 +70,7 @@
                   <td>Rp.5.000</td>
                   <td>Keterangan</td>
                   <td>
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                    >Buka Surat Jalan</button>
+                    <button >Print Surat jalan</button>
                   </td>
                 </tr>
               </tbody>
@@ -86,63 +81,7 @@
     </div>
     <!-- Button trigger modal -->
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Daftar Barang</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Nama Barang</th>
-                  <th scope="col">Satuan</th>
-                  <th scope="col">Jumlah</th>
-                  <th scope="col">Harga Satuan</th>
-                  <th scope="col">Diskon</th>
-                  <th scope="col">Keterangan</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Besi</td>
-                  <td>10</td>
-                  <td>10</td>
-                  <td>10</td>
-                  <td>Ro.1000</td>
-                  <td>Rp.5.000</td>
-                  <td>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" value> Done
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" @click.prevent="printme" class="btn btn-primary">
-              <i class="fa fa-print"/> print
-            </button>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 @endsection

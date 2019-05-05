@@ -3,8 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+ 
 class kategori extends Model
 {
-    protected $table = 'kategori';
+
+    protected $table = 'kategori'; 
+    protected $fillable = ['KodeKategori','NamaKategori','KodeItemAwal'];
 }

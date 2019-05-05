@@ -55,7 +55,7 @@
                     <ul class="nav child_menu">
                       <li><a href="{{ url('/datagudang') }}">Data gudang </a></li>
                       <li><a href="{{ url('/dataitem') }}">Data item</a></li>
-                      <li><a href="{{ url('/dataklasifikasi') }}">Data klasifikasi</a></li>
+                      <li><a href="{{ url('/klasifikasi') }}">Data klasifikasi</a></li>
                       <li><a href="{{ url('/datamatauang') }}">Data mata uang</a></li>
                       <li><a href="{{ url('/datapelanggan') }}">Data pelanggan</a></li>
                       <li><a href="{{ url('/datasatuan') }}">Data satuan</a></li>
@@ -84,8 +84,12 @@
                         <li><a href="{{ url('/konfirmasireturnSuratJalan') }}">Konfirmasi Surat jalan</a></li>
                       </ul>
                     </li>
-                    <li><a href="{{ url('/penjualanLangsung') }}">Penjualan Langsung (kasir)</a></li>
-                    <li><a href="{{ url('/returnPenjualanLangsung') }}">Return Penjualan Langsung</a></li>
+                    <li><a>Penjualan Langsung<span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                          <li><a href="{{ url('/penjualanLangsung') }}">Penjualan Langsung (kasir)</a></li>
+                          <li><a href="{{ url('/returnPenjualanLangsung') }}">Return Penjualan Langsung</a></li>
+                      </ul>
+                    </li>
                   </ul>
                 </li>
 

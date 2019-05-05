@@ -41,24 +41,22 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
-                <table class="table table-hover">
-                  <tbody>
+                <table class="table table-striped">
+                  <thead>
                   <tr>
                     <th >Kode Klasifikasi</th>
                     <th >Nama Klasifikasi</th>
                     <th >Kode Item</th>
                   </tr>
-
-                  <tr v-for='klasifikasi in klasifikasi.data' :key='klasifikasi.KodeKategori'>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                  </thead>
+                  <tbody>
+                
+                @foreach($kategori as $kategori)
+                  <tr >
+                  <td>{{$kategori->KodeKategori}}</td>
+                  <td>{{$kategori->NamaKategori}}</td>
+                  <td>{{$kategori->KodeItemAwal}}</td>
                     <td>
-                        <a href="#" >
-                            <i class="fa fa-eye green"></i>
-                            Lihat
-                        </a>    
-                        &nbsp; - &nbsp;
                         <a href="#">
                             <i class="fa fa-edit blue"></i>
                             Ubah
@@ -70,7 +68,9 @@
                         </a>
                     </td>
                   </tr>
-                </tbody></table>
+                  @endforeach
+                </tbody>
+            </table>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
@@ -79,83 +79,7 @@
             </div>
             <!-- /.card -->
 
-            <!-- Read Modal -->
-            <div class="modal fade" id="modalRead" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Tambah Klasifikasi</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form > <!-- prevent will prevent page refresh -->
-                    <div class="modal-body">
-                        <div class="form-group-row">
-                            <div class="form-group">
-                                <label>Kode Klasifikasi: </label>
-                                <input disabled v-model="form.KodeKategori" type="text" name="KodeKategori" placeholder="Kode Klasifikasi" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Nama Klasifikasi: </label>
-                                <input disabled v-model="form.NamaKategori" type="text" name="NamaKategori" placeholder="Nama Klasifikasi" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Kode Item: </label>
-                                <input disabled v-model="form.KodeItem" type="text" name="KodeItem" placeholder="Kode Item" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-                </div>
-            </div>
-            </div>
-
-            <!-- Create & Update Modal -->
-            <div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-labelledby="createDataTitle" aria-hidden="true">
-            <div class="modal-dialog  modal-xl" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 v-show="!modal_change" class="modal-title">Tambah Klasifikasi</h5>
-                    <h5 v-show="modal_change" class="modal-title">Ubah Klasifikasi</h5>
-                    <button class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form @submit.prevent="modal_change ? updateData() : createData()"> <!-- prevent will prevent page refresh -->
-                    <div class="modal-body">
-                        <div class="form-group-row">
-                            <div class="form-group">
-                                <label v-show="modal_change">Kode Klasifikasi: </label>
-                                <input v-model="form.KodeKategori" type="text" name="KodeKategori" placeholder="Kode Klasifikasi" 
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('KodeKategori') }">
-                                <has-error :form="form" field="KodeKategori"></has-error>
-                            </div>
-                            <div class="form-group">
-                                <label v-show="modal_change">Nama Klasifikasi: </label>
-                                <input v-model="form.NamaKategori" type="text" name="NamaKategori" placeholder="Nama Klasifikasi" 
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('NamaKategori') }">
-                                <has-error :form="form" field="NamaKategori"></has-error>
-                            </div>
-                            <div class="form-group">
-                                <label v-show="modal_change">Kode Item: </label>
-                                <input v-model="form.KodeItem" type="text" name="KodeItem" placeholder="Kode Item" 
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('KodeItem') }">
-                                <has-error :form="form" field="KodeItem"></has-error>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button v-show="!modal_change" type="submit" class="btn btn-primary">Save</button>
-                        <button v-show="modal_change" type="submit" class="btn btn-primary">Edit</button>
-                    </div>
-                </form>
-                </div>
-            </div>
+            
         </div>
     </div>
 
