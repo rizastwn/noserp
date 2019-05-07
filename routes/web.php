@@ -52,16 +52,16 @@ Route::get('/datagudang/create', 'DataGudangController@create');
 Route::get('/datagudang/edit/{id}', 'DataGudangController@edit');
 Route::get('/datagudang/show', 'DataGudangController@show');
 Route::post('/datagudang/update/{id}', 'DataGudangController@update');
-Route::get('/datagudang/destroy', 'DataGudangController@destroy');
+Route::get('/datagudang/destroy/{id}', 'DataGudangController@destroy');
 
 // route master
-Route::get('/datagudang', 'DataGudangController@index');
-Route::get('/dataitem', 'DataItemController@index');
-Route::get('/dataklasifikasi', 'DataController@index');
-Route::get('/datamatauang', 'DataMataUangController@index');
-Route::get('/datapelanggan', 'DataPelangganController@index');
-Route::get('/datasatuan', 'DataSatuanController@index');
-Route::get('/datasupplier', 'DataSupplierController@index');
+// Route::get('/datagudang', 'DataGudangController@index');
+// Route::get('/dataitem', 'DataItemController@index');
+// Route::get('/dataklasifikasi', 'DataController@index');
+// Route::get('/datamatauang', 'DataMataUangController@index');
+// Route::get('/datapelanggan', 'DataPelangganController@index');
+// Route::get('/datasatuan', 'DataSatuanController@index');
+// Route::get('/datasupplier', 'DataSupplierController@index');
 
 // route buat semua controller
 // Route::resource('lokasi', 'DataGudangController');

@@ -64,7 +64,7 @@
                             Ubah
                         </a>    
                         &nbsp; - &nbsp;
-                        <a href="{{ url('/datagudang/destroy') }}" >
+                        <a href="/datagudang/destroy/{{ $lok->KodeLokasi }}" >
                             <i class="fa fa-trash red"></i>
                             Hapus
                         </a>

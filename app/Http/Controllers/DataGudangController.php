@@ -120,6 +120,8 @@ class DataGudangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lokasi = lokasi::find($id);
+        $lokasi->delete();
+        return redirect('/datagudang');
     }
 }
