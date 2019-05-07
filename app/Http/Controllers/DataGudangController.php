@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\lokasi;
+use Illuminate\Support\Facades\DB;
 class DataGudangController extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class DataGudangController extends Controller
      */
     public function index()
     {
-        //
+        $lokasi = lokasi::all();
+        return view('master.dataGudang', compact('lokasi',$lokasi));
     }
 
     /**
@@ -23,7 +25,7 @@ class DataGudangController extends Controller
      */
     public function create()
     {
-        return view('buatForm.buatDataGudang');
+        return view('master.buatForm.buatDataGudang');
     }
 
     /**
@@ -34,7 +36,26 @@ class DataGudangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('lokasis')->insert([
+            'KodeLokasi' => $request->KodeLokasi,
+            'NamaLokasi' => $request->NamaLokasi,
+            'Tipe' => $request->Tipe
+        ]);
+        return redirect('/datagudang');
+
+        // $this->validate($request,[
+    	// 	'KodeLokasi' => 'required',
+        //     'NamaLokasi' => 'required',
+        //     'Tipe' => 'required',
+    	// ]);
+ 
+        // lokasi::create([
+        //     'KodeLokasi' => $request->KodeLokasi,
+        //     'NamaLokasi' => $request->NamaLokasi,
+        //     'Tipe' => $request->Tipe
+    	// ]);
+ 
+    	// return redirect('/datagudang');
     }
 
     /**
@@ -54,9 +75,14 @@ class DataGudangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
-        return view('editForm.editDataGudang');
+        $lokasi = DB::table('lokasis')->where('KodeLokasi',$id)->get();
+        return view('master.editForm.editDataGudang',['lokasi' => $lokasi]);
+
+        // $lokasi = lokasi::find($id);
+        // return view('master.editForm.editDataGudang',['lokasi' => $lokasi]);
     }
 
     /**
@@ -66,9 +92,24 @@ class DataGudangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('lokasis')->where('KodeLokasi',$request->KodeLokasi)->update([
+            'NamaLokasi' => $request->NamaLokasi,
+            'Tipe' => $request->Tipe
+        ]);
+        return redirect('/datagudang');
+
+        // $this->validate($request,[
+        //     'NamaLokasi' => 'required',
+        //     'Tipe' => 'required',
+    	// ]);
+      
+        //  $lokasi = lokasi::find($id);
+        //  $lokasi->NamaLokasi = $request->NamaLokasi;
+        //  $lokasi->Tipe = $request->Tipe;
+        //  $lokasi->save();
+        //  return redirect('/datagudang');
     }
 
     /**

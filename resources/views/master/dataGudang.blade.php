@@ -30,9 +30,11 @@
                 
                 <div class="card-tools">
                   <div class="" >
-                    <button class="btn btn-success" >
-                        <i class="fa fa-plus-square"> Tambah gudang</i>
-                    </button>
+                    <!-- <button class="btn btn-success"> -->
+                        <a class="btn btn-success" href="/datagudang/create">
+                          <i class="fa fa-plus-square"> Tambah gudang</i>
+                        </a>
+                    <!-- </button> -->
                     <input type="text" class="form-control float-right"  placeholder="Filter">
                     <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
               </div>
@@ -46,31 +48,29 @@
                     <th>Tipe</th>
                   </tr>
 
-                  <tr >
-                  <tr v-for='gudang in gudang.data' :key='gudang.KodeLokasi'>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                  @foreach($lokasi as $lok)
+                  <tr>
+                    <td>{{$lok->KodeLokasi}}</td>
+                    <td>{{$lok->NamaLokasi}}</td>
+                    <td>{{$lok->Tipe}}</td>
                     <td>
-                        <a href="#" >
+                        <a href="{{ url('/datagudang/show') }}" >
                             <i class="fa fa-eye green"></i>
-                            <i class="fas fa-eye green"></i>
                             Lihat
                         </a>    
                         &nbsp; - &nbsp;
-                        <a href="#" >
+                        <a href="/datagudang/edit/{{ $lok->KodeLokasi }}" >
                             <i class="fa fa-edit blue"></i>
-                            <i class="fas fa-edit blue"></i>
                             Ubah
                         </a>    
                         &nbsp; - &nbsp;
-                        <a href="#" >
+                        <a href="{{ url('/datagudang/destroy') }}" >
                             <i class="fa fa-trash red"></i>
-                            <i class="fas fa-trash red"></i>
                             Hapus
                         </a>
                     </td>
                   </tr>
+                  @endforeach
                 </tbody></table>
               </div>
               <!-- /.card-body -->

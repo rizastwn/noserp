@@ -46,25 +46,31 @@ Route::get('/penjualanLangsung', 'PagesController@penjualanLangsung');
 //route return penjualan langsung
 Route::get('/returnPenjualanLangsung', 'PagesController@returnPenjualanLangsung');
 
-//route master
-//Route::get('/datagudang', 'PagesController@datagudang');
-//Route::get('/dataitem', 'PagesController@dataitem');
-//Route::get('/dataklasifikasi', 'PagesController@dataklasifikasi');
-//Route::get('/datamatauang', 'PagesController@datamatauang');
-//Route::get('/datapelanggan', 'PagesController@datapelanggan');
-//Route::get('/datasatuan', 'PagesController@datasatuan');
-//Route::get('/datasupplier', 'PagesController@datasupplier');
+//route controller
+Route::get('/datagudang/store', 'DataGudangController@store');
+Route::get('/datagudang/create', 'DataGudangController@create');
+Route::get('/datagudang/edit/{id}', 'DataGudangController@edit');
+Route::get('/datagudang/show', 'DataGudangController@show');
+Route::post('/datagudang/update', 'DataGudangController@update');
+Route::get('/datagudang/destroy', 'DataGudangController@destroy');
 
+// route master
+Route::get('/datagudang', 'DataGudangController@index');
+Route::get('/dataitem', 'DataItemController@index');
+Route::get('/dataklasifikasi', 'DataController@index');
+Route::get('/datamatauang', 'DataMataUangController@index');
+Route::get('/datapelanggan', 'DataPelangganController@index');
+Route::get('/datasatuan', 'DataSatuanController@index');
+Route::get('/datasupplier', 'DataSupplierController@index');
 
 // route buat semua controller
-Route::resource('lokasi', 'DataGudangController');
-Route::resource('item', 'DataItemController');
-//Route::get('/kategori','DataKlasifikasiController@index');
-Route::resource('kategori', 'DataKlasifikasiController');
-Route::resource('matauang', 'DataMataUangController');
-Route::resource('pelanggan', 'DataPelangganController');
-Route::resource('satuan', 'DataSatuanController');
-Route::resource('supplier', 'DataSupplierController');
-Route::resource('PemesananPembelian', 'PemesananPembelianController');
-Route::resource('PemesananPenjualan', 'PemesananPenjualanController');
-
+// Route::resource('lokasi', 'DataGudangController');
+// Route::resource('item', 'DataItemController');
+// Route::get('/kategori','DataKlasifikasiController@index');
+// Route::resource('kategori', 'DataKlasifikasiController');
+// Route::resource('matauang', 'DataMataUangController');
+// Route::resource('pelanggan', 'DataPelangganController');
+// Route::resource('satuan', 'DataSatuanController');
+// Route::resource('supplier', 'DataSupplierController');
+// Route::resource('PemesananPembelian', 'PemesananPembelianController');
+// Route::resource('PemesananPenjualan', 'PemesananPenjualanController');
