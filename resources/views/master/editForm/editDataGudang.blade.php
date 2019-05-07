@@ -8,23 +8,21 @@
     </div><!-- /.row -->
     <br>
 
-    <form action="/datagudang/update" method="post">
+    <form action="/datagudang/update/{{ $lokasi->KodeLokasi }}" method="post">
     @csrf
-    @foreach($lokasi as $lok)
         <div class="form-group">
             <label>Kode Gudang: </label>
-            <input disabled type="text" name="KodeLokasi" value="{{ $lok->KodeLokasi }}" placeholder="Kode Gudang" class="form-control">
+            <input disabled type="text" name="KodeLokasi" value="{{ $lokasi->KodeLokasi }}" placeholder="Kode Gudang" class="form-control">
         </div>
         <div class="form-group">
             <label>Nama Gudang: </label>
-            <input type="text" required="required" name="NamaLokasi" value="{{ $lok->NamaLokasi }}" placeholder="Nama Gudang" class="form-control">
+            <input type="text" required="required" name="NamaLokasi" value="{{ $lokasi->NamaLokasi }}" placeholder="Nama Gudang" class="form-control">
         </div>
         <div class="form-group">
             <label>Tipe: </label>
-            <input type="text" required="required" name="Tipe" value="{{ $lok->Tipe }}" placeholder="Tipe" class="form-control">
+            <input type="text" required="required" name="Tipe" value="{{ $lokasi->Tipe }}" placeholder="Tipe" class="form-control">
         </div>
         <button class="btn btn-success">Simpan</button>
-    @endforeach
     </form>
 
 </div><!-- /.container-fluid -->

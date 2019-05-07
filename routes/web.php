@@ -51,7 +51,7 @@ Route::get('/datagudang/store', 'DataGudangController@store');
 Route::get('/datagudang/create', 'DataGudangController@create');
 Route::get('/datagudang/edit/{id}', 'DataGudangController@edit');
 Route::get('/datagudang/show', 'DataGudangController@show');
-Route::post('/datagudang/update', 'DataGudangController@update');
+Route::post('/datagudang/update/{id}', 'DataGudangController@update');
 Route::get('/datagudang/destroy', 'DataGudangController@destroy');
 
 // route master

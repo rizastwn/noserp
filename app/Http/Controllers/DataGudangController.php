@@ -36,26 +36,26 @@ class DataGudangController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('lokasis')->insert([
-            'KodeLokasi' => $request->KodeLokasi,
-            'NamaLokasi' => $request->NamaLokasi,
-            'Tipe' => $request->Tipe
-        ]);
-        return redirect('/datagudang');
-
-        // $this->validate($request,[
-    	// 	'KodeLokasi' => 'required',
-        //     'NamaLokasi' => 'required',
-        //     'Tipe' => 'required',
-    	// ]);
- 
-        // lokasi::create([
+        // DB::table('lokasis')->insert([
         //     'KodeLokasi' => $request->KodeLokasi,
         //     'NamaLokasi' => $request->NamaLokasi,
         //     'Tipe' => $request->Tipe
-    	// ]);
+        // ]);
+        // return redirect('/datagudang');
+
+        $this->validate($request,[
+    		'KodeLokasi' => 'required',
+            'NamaLokasi' => 'required',
+            'Tipe' => 'required',
+    	]);
  
-    	// return redirect('/datagudang');
+        lokasi::create([
+            'KodeLokasi' => $request->KodeLokasi,
+            'NamaLokasi' => $request->NamaLokasi,
+            'Tipe' => $request->Tipe
+    	]);
+ 
+    	return redirect('/datagudang');
     }
 
     /**
@@ -78,11 +78,11 @@ class DataGudangController extends Controller
 
     public function edit($id)
     {
-        $lokasi = DB::table('lokasis')->where('KodeLokasi',$id)->get();
-        return view('master.editForm.editDataGudang',['lokasi' => $lokasi]);
-
-        // $lokasi = lokasi::find($id);
+        // $lokasi = DB::table('lokasis')->where('KodeLokasi',$id)->get();
         // return view('master.editForm.editDataGudang',['lokasi' => $lokasi]);
+
+        $lokasi = lokasi::find($id);
+        return view('master.editForm.editDataGudang',['lokasi' => $lokasi]);
     }
 
     /**
@@ -92,24 +92,24 @@ class DataGudangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update($id, Request $request)
     {
-        DB::table('lokasis')->where('KodeLokasi',$request->KodeLokasi)->update([
-            'NamaLokasi' => $request->NamaLokasi,
-            'Tipe' => $request->Tipe
-        ]);
-        return redirect('/datagudang');
+        // DB::table('lokasis')->where('KodeLokasi',$request->KodeLokasi)->update([
+        //     'NamaLokasi' => $request->NamaLokasi,
+        //     'Tipe' => $request->Tipe
+        // ]);
+        // return redirect('/datagudang');
 
-        // $this->validate($request,[
-        //     'NamaLokasi' => 'required',
-        //     'Tipe' => 'required',
-    	// ]);
+        $this->validate($request,[
+            'NamaLokasi' => 'required',
+            'Tipe' => 'required',
+    	]);
       
-        //  $lokasi = lokasi::find($id);
-        //  $lokasi->NamaLokasi = $request->NamaLokasi;
-        //  $lokasi->Tipe = $request->Tipe;
-        //  $lokasi->save();
-        //  return redirect('/datagudang');
+         $lokasi = lokasi::find($id);
+         $lokasi->NamaLokasi = $request->NamaLokasi;
+         $lokasi->Tipe = $request->Tipe;
+         $lokasi->save();
+         return redirect('/datagudang');
     }
 
     /**
