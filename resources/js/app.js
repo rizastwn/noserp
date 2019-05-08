@@ -1,22 +1,7 @@
+/**
+ * First, we will load all of this project's Javascript utilities and other
+ * dependencies. Then, we will be ready to develop a robust and powerful
+ * application frontend using useful Laravel and JavaScript libraries.
+ */
+
 require('./bootstrap');
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-
-Vue.use(VueRouter);
-import App from './components/App.vue';
-
-const router = [{
-    name: App,
-    path: '/',
-    component: App
-}];
-
-const routes = new VueRouter({
-    mode: 'history',
-    routes: routes
-});
-
-new Vue(Vue.util.extend({
-    router,
-    store
-}, App)).$mount('#app');
