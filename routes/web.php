@@ -46,7 +46,17 @@ Route::get('/penjualanLangsung', 'PagesController@penjualanLangsung');
 //route return penjualan langsung
 Route::get('/returnPenjualanLangsung', 'PagesController@returnPenjualanLangsung');
 
-//route controller
+//ROUTE MASTER
+// route menu
+Route::get('/datagudang', 'DataGudangController@index');
+Route::get('/dataitem', 'DataItemController@index');
+Route::get('/dataklasifikasi', 'DataKlasifikasiController@index');
+Route::get('/datamatauang', 'DataMataUangController@index');
+Route::get('/datapelanggan', 'DataPelangganController@index');
+Route::get('/datasatuan', 'DataSatuanController@index');
+Route::get('/datasupplier', 'DataSupplierController@index');
+
+//route datagudang
 Route::get('/datagudang/store', 'DataGudangController@store');
 Route::get('/datagudang/create', 'DataGudangController@create');
 Route::get('/datagudang/edit/{id}', 'DataGudangController@edit');
@@ -54,14 +64,21 @@ Route::get('/datagudang/show', 'DataGudangController@show');
 Route::post('/datagudang/update/{id}', 'DataGudangController@update');
 Route::get('/datagudang/destroy/{id}', 'DataGudangController@destroy');
 
-// route master
-// Route::get('/datagudang', 'DataGudangController@index');
-// Route::get('/dataitem', 'DataItemController@index');
-// Route::get('/dataklasifikasi', 'DataController@index');
-// Route::get('/datamatauang', 'DataMataUangController@index');
-// Route::get('/datapelanggan', 'DataPelangganController@index');
-// Route::get('/datasatuan', 'DataSatuanController@index');
-// Route::get('/datasupplier', 'DataSupplierController@index');
+//route dataklasifikasi
+Route::get('/dataklasifikasi/store', 'DataKlasifikasiController@store');
+Route::get('/dataklasifikasi/create', 'DataKlasifikasiController@create');
+Route::get('/dataklasifikasi/edit/{id}', 'DataKlasifikasiController@edit');
+Route::get('/dataklasifikasi/show', 'DataKlasifikasiController@show');
+Route::post('/dataklasifikasi/update/{id}', 'DataKlasifikasiController@update');
+Route::get('/dataklasifikasi/destroy/{id}', 'DataKlasifikasiController@destroy');
+
+//route datamatauang
+Route::get('/datamatauang/store', 'DataMataUangController@store');
+Route::get('/datamatauang/create', 'DataMataUangController@create');
+Route::get('/datamatauang/edit/{id}', 'DataMataUangController@edit');
+Route::get('/datamatauang/show', 'DataMataUangController@show');
+Route::post('/datamatauang/update/{id}', 'DataMataUangController@update');
+Route::get('/datamatauang/destroy/{id}', 'DataMataUangController@destroy');
 
 // route buat semua controller
 // Route::resource('lokasi', 'DataGudangController');

@@ -27,50 +27,50 @@
         </div> 
             <div class="card">
               <div class="card-header">
-                    <button  class="btn btn-success">
-                        <i  class="fa fa-plus-square"> Tambah klasifikasi</i>
-                    </button>
-                <div class="card-tools">
-                  <div >
-                    <input type="text"  class="form-control float-right"  placeholder="Filter">
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
+              <div class="card-tools">
+                  <div class="" >
+                    <!-- <button class="btn btn-success"> -->
+                        <a class="btn btn-success" href="/dataklasifikasi/create">
+                          <i class="fa fa-plus-square"> Tambah klasifikasi</i>
+                        </a>
+                    <!-- </button> -->
+                    <input type="text" class="form-control float-right"  placeholder="Filter">
+                    <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
-                <table class="table table-striped">
-                  <thead>
-                  <tr>
-                    <th >Kode Klasifikasi</th>
-                    <th >Nama Klasifikasi</th>
-                    <th >Kode Item</th>
-                  </tr>
-                  </thead>
+                <table class="table table-hover">
                   <tbody>
-                
-                @foreach($kategori as $kategori)
-                  <tr >
-                  <td>{{$kategori->KodeKategori}}</td>
-                  <td>{{$kategori->NamaKategori}}</td>
-                  <td>{{$kategori->KodeItemAwal}}</td>
+                  <tr>
+                    <th>Kode Klasifikasi</th>
+                    <th>Nama Klasifikasi</th>
+                    <th>Kode Item</th>
+                  </tr>
+
+                  @foreach($kategori as $kat)
+                  <tr>
+                    <td>{{$kat->KodeKategori}}</td>
+                    <td>{{$kat->NamaKategori}}</td>
+                    <td>{{$kat->KodeItemAwal}}</td>
                     <td>
-                        <a href="#">
+                        <a href="{{ url('/dataklasifikasi/show') }}" >
+                            <i class="fa fa-eye green"></i>
+                            Lihat
+                        </a>    
+                        &nbsp; - &nbsp;
+                        <a href="/dataklasifikasi/edit/{{ $kat->KodeKategori }}" >
                             <i class="fa fa-edit blue"></i>
                             Ubah
                         </a>    
                         &nbsp; - &nbsp;
-                        <a href="#" >
+                        <a href="/dataklasifikasi/destroy/{{ $kat->KodeKategori }}" >
                             <i class="fa fa-trash red"></i>
                             Hapus
                         </a>
                     </td>
                   </tr>
                   @endforeach
-                </tbody>
-            </table>
+                </tbody></table>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">

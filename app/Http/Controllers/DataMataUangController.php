@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\matauang;
 class DataMataUangController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class DataMataUangController extends Controller
      */
     public function index()
     {
-        //
+        $matauang = matauang::all();
+        return view('master.dataMataUang', compact('matauang',$matauang));
     }
 
     /**
@@ -23,7 +24,7 @@ class DataMataUangController extends Controller
      */
     public function create()
     {
-        return view('buatForm.buatDataMataUang');
+        return view('master.buatForm.buatDataMataUang');
     }
 
     /**
@@ -34,7 +35,19 @@ class DataMataUangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+    		'KodeMataUang' => 'required',
+            'NamaMataUang' => 'required',
+            'Nilai' => 'required'
+    	]);
+ 
+        matauang::create([
+            'KodeMataUang' => $request->KodeMataUang,
+            'NamaMataUang' => $request->NamaMataUang,
+            'Nilai' => $request->Nilai
+    	]);
+ 
+    	return redirect('/datamatauang');
     }
 
     /**
@@ -56,7 +69,8 @@ class DataMataUangController extends Controller
      */
     public function edit($id)
     {
-        return view('editForm.editDataMataUang');
+        $matauang = matauang::find($id);
+        return view('master.editForm.editDataMataUang',['matauang' => $matauang]);
     }
 
     /**
@@ -68,7 +82,16 @@ class DataMataUangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'NamaMataUang' => 'required',
+            'Nilai' => 'required',
+    	]);
+      
+         $matauang = matauang::find($id);
+         $matauang->NamaMataUang = $request->NamaMataUang;
+         $matauang->Nilai = $request->Nilai;
+         $matauang->save();
+         return redirect('/datamatauang');
     }
 
     /**
@@ -79,6 +102,8 @@ class DataMataUangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $matauang = matauang::find($id);
+        $matauang->delete();
+        return redirect('/datamatauang');
     }
 }
