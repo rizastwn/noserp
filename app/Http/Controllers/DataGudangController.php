@@ -46,7 +46,7 @@ class DataGudangController extends Controller
         $this->validate($request,[
     		'KodeLokasi' => 'required',
             'NamaLokasi' => 'required',
-            'Tipe' => 'required',
+            'Tipe' => 'required'
     	]);
  
         lokasi::create([

@@ -13,8 +13,8 @@ class DataKlasifikasiController extends Controller
      */
     public function index()
     {
-        $kategoris=kategori::all();
-        return view('master.dataKlasifikasi',compact('kategoris'));
+        $kategori = kategori::all();
+        return view('master.dataKlasifikasi', compact('kategori',$kategori));
     }
 
     /**
@@ -24,7 +24,7 @@ class DataKlasifikasiController extends Controller
      */
     public function create()
     {
-        return view('buatForm.buatDataKlasifikasi');
+        return view('master.buatForm.buatDataKlasifikasi');
     }
 
     /**
@@ -38,15 +38,16 @@ class DataKlasifikasiController extends Controller
         $this->validate($request,[
             'KodeKategori'=> 'required',
             'NamaKategori'=> 'required',
-            'KodeItemAwal'=> 'required',
-            'Status'=> 'required',
-            ]);
-
-        $kategoris = new kategori();
-        $kategoris->KodeKategori= $request->get('KodeKategori');
-        $kategoris->NamaKategori= $request->get('NamaKategori');
-        $kategoris->KodeItemAwal= $request->get('KodeItemAwal');
-        $kategoris->save();
+            'KodeItemAwal'=> 'required'
+        ]);
+     
+        kategori::create([
+            'KodeKategori' => $request->KodeKategori,
+            'NamaKategori' => $request->NamaKategori,
+            'KodeItemAwal' => $request->KodeItemAwal
+        ]);
+    
+        return redirect('/dataklasifikasi');
     }
 
     /**
@@ -68,8 +69,8 @@ class DataKlasifikasiController extends Controller
      */
     public function edit($id)
     {
-        $kategoris = kategori::find($id);
-        return view('editForm.editDataKlasifikasi', compact('kategoris','id'));
+        $kategori = kategori::find($id);
+        return view('master.editForm.editDataKlasifikasi',['kategori' => $kategori]);
     }
 
     /**
@@ -82,16 +83,15 @@ class DataKlasifikasiController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'KodeKategori'=> 'required',
             'NamaKategori'=> 'required',
-            'KodeItemAwal'=> 'required',
-            'Status'=> 'required',
-            ]);
-        $kategoris= kategori::find($id);
-        $kategoris->KodeKategori= $request->get('KodeKategori');
-        $kategoris->NamaKategori= $request->get('NamaKategori');
-        $kategoris->KodeItemAwal= $request->get('KodeItemAwal');
-        $kategoris->save();
+            'KodeItemAwal'=> 'required'
+        ]);
+        
+        $kategori = kategori::find($id);
+        $kategori->NamaKategori = $request->NamaKategori;
+        $kategori->KodeItemAwal = $request->KodeItemAwal;
+        $kategori->save();
+        return redirect('/dataklasifikasi');
     }
 
     /**
@@ -102,8 +102,8 @@ class DataKlasifikasiController extends Controller
      */
     public function destroy($id)
     {
-        $kategoris = kategori::find($id);
-        $kategoris->delete();
-        return redirect('/dataKlasifikasi')->with('success','data klasifikasi telah di hapus');
+        $kategori = kategori::find($id);
+        $kategori->delete();
+        return redirect('/dataklasifikasi');
     }
 }
