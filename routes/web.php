@@ -88,6 +88,16 @@ Route::get('/datasatuan/show', 'DataSatuanController@show');
 Route::post('/datasatuan/update/{id}', 'DataSatuanController@update');
 Route::get('/datasatuan/destroy/{id}', 'DataSatuanController@destroy');
 
+//ROUTE PEMBELIAN
+// route pemesananpembelian
+Route::get('/popembelian', 'PemesananPembelianController@index');
+Route::get('/pokonfirmasi', 'PemesananPembelianKonfirmasiController@index');
+Route::get('/poditerima', 'PemesananPembelianDiterimaController@index');
+Route::get('/pobatal', 'PemesananPembelianBatalController@index');
+
+//route pemesananpembelian
+Route::get('/pemesananpembelian/store', 'PemesananPembelianController@store');
+
 // route buat semua controller
 // Route::resource('lokasi', 'DataGudangController');
 // Route::resource('item', 'DataItemController');

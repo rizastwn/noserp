@@ -99,10 +99,10 @@
                   <ul class="nav child_menu">
                     <li><a>Pemesanan Pembelian<span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                        <li><a href="{{ url('/pemesananPembelian') }}">P.O Pembelian</a></li>
-                        <li><a href="{{ url('/konfirmasipemesananPembelian') }}">P.O Konfirmasi</a></li>
-                        <li><a href="{{ url('/diterimapemesananPembelian') }}">P.O Diterima</a></li>
-                        <li><a href="{{ url('/batalpemesananPembelian') }}">P.O Batal</a></li>
+                        <li><a href="{{ url('/popembelian') }}">P.O Pembelian</a></li>
+                        <li><a href="{{ url('/pokonfirmasi') }}">P.O Konfirmasi</a></li>
+                        <li><a href="{{ url('/poditerima') }}">P.O Diterima</a></li>
+                        <li><a href="{{ url('/pobatal') }}">P.O Batal</a></li>
                       </ul>
                     </li>
                     <li><a>Penerimaan Barang<span class="fa fa-chevron-down"></span></a>

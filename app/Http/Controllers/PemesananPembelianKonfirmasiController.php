@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\pemesananpembelian;
-use App\lokasi;
-use App\matauang;
-use App\supplier;
-use App\item;
-class PemesananPembelianController extends Controller
+
+class PemesananPembelianKonfirmasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +13,7 @@ class PemesananPembelianController extends Controller
      */
     public function index()
     {
-        return view('pemesananPembelian.pemesananPembelian')
-            ->with('matauang', matauang::all())
-            ->with('lokasi', lokasi::all())
-            ->with('supplier', supplier::all())
-            ->with('item', item::all());
+        //
     }
 
     /**
@@ -42,29 +34,7 @@ class PemesananPembelianController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-    		'KodePO' => 'required',
-            'KodeLokasi' => 'required',
-            'KodeMataUang' => 'required',
-            // 'KodeSupplier' => 'required',
-            'PPN' => 'required',
-            'Tanggal' => 'required',
-            'Expired' => 'required',
-            'Keterangan' => 'required'
-    	]);
- 
-        pemesananpembelian::create([
-            'KodePO' => $request->kodepo,
-            'KodeLokasi' => $request->lokasi,
-            'KodeMataUang' => $request->matauang,
-            // 'KodeSupplier' => $request->supplier,
-            'PPN' => $request->ppn,
-            'Tanggal' => $request->tanggal,
-            'Expired' => $request->expired,
-            'Keterangan' => $request->keterangan
-    	]);
- 
-    	return redirect('/popembelian');
+        //
     }
 
     /**

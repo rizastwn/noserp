@@ -28,7 +28,8 @@ class CreatePemesananpembeliansTable extends Migration
             $table->double('Subtotal');
             $table->string('KodeSupplier');
             $table->string('Expired');
-            $table->string('Tanggal');
+            $table->date('Tanggal');
+            $table->string('Keterangan');
             $table->timestamps();
         });
     }
