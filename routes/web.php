@@ -80,6 +80,14 @@ Route::get('/datamatauang/show', 'DataMataUangController@show');
 Route::post('/datamatauang/update/{id}', 'DataMataUangController@update');
 Route::get('/datamatauang/destroy/{id}', 'DataMataUangController@destroy');
 
+//route datasatuan
+Route::get('/datasatuan/store', 'DataSatuanController@store');
+Route::get('/datasatuan/create', 'DataSatuanController@create');
+Route::get('/datasatuan/edit/{id}', 'DataSatuanController@edit');
+Route::get('/datasatuan/show', 'DataSatuanController@show');
+Route::post('/datasatuan/update/{id}', 'DataSatuanController@update');
+Route::get('/datasatuan/destroy/{id}', 'DataSatuanController@destroy');
+
 // route buat semua controller
 // Route::resource('lokasi', 'DataGudangController');
 // Route::resource('item', 'DataItemController');

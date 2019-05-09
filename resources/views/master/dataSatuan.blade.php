@@ -27,17 +27,16 @@
         </div>
             <div class="card">
               <div class="card-header">
-                    <button >
-                        <i class="fa fa-plus-square">&nbsp;&nbsp;Tambah satuan</i>
-                    </button>
+                
                 <div class="card-tools">
-                  <div >
-                    <input type="text"  class="form-control float-right"  placeholder="Filter">
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
+                  <div class="" >
+                    <!-- <button class="btn btn-success"> -->
+                        <a class="btn btn-success" href="/datasatuan/create">
+                          <i class="fa fa-plus-square"> Tambah satuan</i>
+                        </a>
+                    <!-- </button> -->
+                    <input type="text" class="form-control float-right"  placeholder="Filter">
+                    <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
@@ -48,26 +47,28 @@
                     <th>Nama Satuan</th>
                   </tr>
 
-                  <tr v-for='satuan in satuan.data' :key='satuan.KodeSatuan'>
-                    <td></td>
-                    <td></td>
+                  @foreach($satuan as $sat)
+                  <tr>
+                    <td>{{$sat->KodeSatuan}}</td>
+                    <td>{{$sat->NamaSatuan}}</td>
                     <td>
-                        <a href="#" >
+                        <a href="{{ url('/datasatuan/show') }}" >
                             <i class="fa fa-eye green"></i>
                             Lihat
                         </a>    
                         &nbsp; - &nbsp;
-                        <a href="#" >
+                        <a href="/datasatuan/edit/{{ $sat->KodeSatuan }}" >
                             <i class="fa fa-edit blue"></i>
                             Ubah
                         </a>    
                         &nbsp; - &nbsp;
-                        <a href="#" >
+                        <a href="/datasatuan/destroy/{{ $sat->KodeSatuan }}" >
                             <i class="fa fa-trash red"></i>
                             Hapus
                         </a>
                     </td>
                   </tr>
+                  @endforeach
                 </tbody></table>
               </div>
               <!-- /.card-body -->
@@ -77,38 +78,8 @@
             </div>
             <!-- /.card -->
 
-            <!-- Read Modal -->
-            <div class="modal fade" id="modalRead" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Tambah Satuan</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form > <!-- prevent will prevent page refresh -->
-                    <div class="modal-body">
-                        <div class="form-group-row">
-                            <div class="form-group">
-                                <label>Kode Satuan: </label>
-                                <input disabled v-model="form.KodeSatuan" type="text" name="KodeSatuan" placeholder="Kode Satuan" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Nama Satuan: </label>
-                                <input disabled v-model="form.NamaSatuan" type="text" name="NamaSatuan" placeholder="Nama Satuan" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-                </div>
-            </div>
-            </div>
-
             
         </div>
     </div>
+
 @endsection

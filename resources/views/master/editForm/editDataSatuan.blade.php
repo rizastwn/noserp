@@ -5,15 +5,23 @@
         <div class="col-sm-6">
             <h1 class="m-0 text-dark">Edit Data Satuan</h1>
         </div><!-- /.col -->
-        <div class="form-group">
-                <label>Kode Satuan: </label>
-                <input disabled type="text" name="KodeLokasi" placeholder="Kode Gudang" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Nama Satuan: </label>
-                <input type="text" name="NamaLokasi" placeholder="Nama Gudang" class="form-control">
-            </div>
-            <a href="" class="btn btn-success">Simpan</a>
     </div><!-- /.row -->
+    <br>
+
+    <form action="/datasatuan/update/{{ $satuan->KodeSatuan }}" method="post">
+    @csrf
+        <div class="form-group">
+            <label>Kode Satuan: </label>
+            <input disabled type="text" name="KodeSatuan" value="{{ $satuan->KodeSatuan }}" placeholder="Kode Satuan" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Nama Satuan: </label>
+            <input type="text" required="required" name="NamaSatuan" value="{{ $satuan->NamaSatuan }}" placeholder="Nama Satuan" class="form-control">
+        </div>
+        <button class="btn btn-success">Simpan</button>
+    </form>
+
 </div><!-- /.container-fluid -->
-@endsection 
+ 
+@endsection
+

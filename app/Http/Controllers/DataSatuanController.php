@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\satuan;
 class DataSatuanController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class DataSatuanController extends Controller
      */
     public function index()
     {
-        //
+        $satuan = satuan::all();
+        return view('master.dataSatuan', compact('satuan',$satuan));
     }
 
     /**
@@ -23,7 +24,7 @@ class DataSatuanController extends Controller
      */
     public function create()
     {
-        //
+        return view('master.buatForm.buatDataSatuan');
     }
 
     /**
@@ -34,7 +35,17 @@ class DataSatuanController extends Controller
      */
     public function store(Request $request)
     {
-        return view('buatForm.buatDataSatuan');
+        $this->validate($request,[
+            'KodeSatuan'=> 'required',
+            'NamaSatuan'=> 'required'
+        ]);
+     
+        satuan::create([
+            'KodeSatuan' => $request->KodeSatuan,
+            'NamaSatuan' => $request->NamaSatuan
+        ]);
+    
+        return redirect('/datasatuan');
     }
 
     /**
@@ -56,7 +67,8 @@ class DataSatuanController extends Controller
      */
     public function edit($id)
     {
-        return view('editForm.editDataSatuan');
+        $satuan = satuan::find($id);
+        return view('master.editForm.editDataSatuan',['satuan' => $satuan]);
     }
 
     /**
@@ -68,7 +80,14 @@ class DataSatuanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'NamaSatuan'=> 'required'
+        ]);
+        
+        $satuan = satuan::find($id);
+        $satuan->NamaSatuan = $request->NamaSatuan;
+        $satuan->save();
+        return redirect('/datasatuan');
     }
 
     /**
@@ -79,6 +98,10 @@ class DataSatuanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $satuan = satuan::find($id);
+        $satuan->delete();
+        return redirect('/datasatuan');
     }
 }
+
+
