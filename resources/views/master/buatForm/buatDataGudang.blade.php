@@ -6,7 +6,7 @@
             <h1 class="m-0 text-dark">Tambah Data Gudang</h1>
         </div><!-- /.col -->
     </div><!-- /.row -->
-    <br>
+    <br> 
 
     <form action="/datagudang/store" method="get">
     @csrf

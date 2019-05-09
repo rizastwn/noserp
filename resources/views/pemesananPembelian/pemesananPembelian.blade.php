@@ -31,7 +31,7 @@
   <div class="card">
       <div class="card-header">
         <h2>SO-150700005</h2>
-          <form @submit.prevent="readData()">
+          <form ">
           <!-- <button class="btn btn-success">
               <i class="fas fa-plus">&nbsp;&nbsp;Tambah Data P.O</i>
           </button> -->
