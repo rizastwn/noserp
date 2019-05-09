@@ -22,7 +22,7 @@
   <div class="container-fluid">
       <div class="row mb-2">
       <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Sales Order</h1>
+          <h1 class="m-0 text-dark">Pemesanan Pembelian</h1>
       </div><!-- /.col -->
       </div><!-- /.row -->
   </div><!-- /.container-fluid -->
@@ -30,8 +30,8 @@
 
   <div class="card">
       <div class="card-header">
-        <h2>SO-150700005</h2>
-          <form ">
+        <h2>PO-150700005</h2>
+          <form >
           <!-- <button class="btn btn-success">
               <i class="fas fa-plus">&nbsp;&nbsp;Tambah Data P.O</i>
           </button> -->
@@ -96,6 +96,15 @@
               <div class="form-group col-md-3">
                 <label for="inputKeterangan">Keterangan</label>
                 <textarea class="form-control" id="inputKeterangan" rows="5"></textarea>
+              </div>
+              <div class="form-group col-md-3 radio">
+                <label><input type="radio" name="optradio" checked>include ppn</label>
+              </div>
+              <div class="form-group col-md-3 radio">
+                <label><input type="radio" name="optradio">exclude ppn</label>
+              </div>
+              <div class="form-group col-md-3 radio">
+                <label><input type="radio" name="optradio">non ppn</label>
               </div>
           </div>
           <hr class="style1">

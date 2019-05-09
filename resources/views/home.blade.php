@@ -74,6 +74,7 @@
                     </li>
                     <li><a>Surat jalan<span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
+                          <li><a href="{{ url('/') }}">Buat Surat Jalan </a></li>
                         <li><a href="{{ url('/suratJalan') }}">Surat Jalan </a></li>
                         <li><a href="{{ url('/konfirmasisuratJalan') }}">Konfirmasi Surat jalan</a></li>
                       </ul>
@@ -84,8 +85,13 @@
                         <li><a href="{{ url('/konfirmasireturnSuratJalan') }}">Konfirmasi Surat jalan</a></li>
                       </ul>
                     </li>
-                    <li><a href="{{ url('/penjualanLangsung') }}">Penjualan Langsung (kasir)</a></li>
-                    <li><a href="{{ url('/returnPenjualanLangsung') }}">Return Penjualan Langsung</a></li>
+                    <li><a>Penjualan Langsung<span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                        <li><a href="{{ url('/penjualanLangsung') }}">Penjualan Langsung (kasir)</a></li>
+                        <li><a href="{{ url('/returnPenjualanLangsung') }}">Return Penjualan Langsung</a></li>
+                      </ul>
+                    </li>
+                    
                   </ul>
                 </li>
 
@@ -93,7 +99,7 @@
                   <ul class="nav child_menu">
                     <li><a>Pemesanan Pembelian<span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                        <li><a href="{{ url('/pemesananPembelian') }}">P.O Penjualan</a></li>
+                        <li><a href="{{ url('/pemesananPembelian') }}">P.O Pembelian</a></li>
                         <li><a href="{{ url('/konfirmasipemesananPembelian') }}">P.O Konfirmasi</a></li>
                         <li><a href="{{ url('/diterimapemesananPembelian') }}">P.O Diterima</a></li>
                         <li><a href="{{ url('/batalpemesananPembelian') }}">P.O Batal</a></li>
